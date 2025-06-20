@@ -23,4 +23,30 @@ class CharacterOut(CharacterBase):
     id: int
 
     class Config:
+        orm_mode = True
+
+class PositionBase(BaseModel):
+    character_id: int
+    x: int
+    y: int
+
+class PositionCreate(PositionBase):
+    pass
+
+class PositionOut(PositionBase):
+    id: int
+    class Config:
+        orm_mode = True
+
+class EnemyBase(BaseModel):
+    x: int
+    y: int
+    health: int = 100
+
+class EnemyCreate(EnemyBase):
+    pass
+
+class EnemyOut(EnemyBase):
+    id: int
+    class Config:
         orm_mode = True 
